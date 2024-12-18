@@ -1,124 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Questionnaire sur les Hamsters</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        header {
-            background-color: #ffcccb;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        main {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        .question {
-            margin-bottom: 20px;
-        }
-        .question label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .question input[type="text"],
-        .question select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        .question input[type="radio"],
-        .question input[type="checkbox"] {
-            margin-right: 10px;
-        }
-        button {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            background-color: #ff7f7f;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #ff4c4c;
-        }
-    </style>
+    <title>questionnaire sur les hamsters</title>
 </head>
 <body>
-    <header>
-        <h1>Questionnaire sur les Hamsters</h1>
-    </header>
-    <main>
-        <form id="hamsterForm">
-            <!-- Example of a question -->
-            <div class="question">
-                <label for="question1">1. Quel est le type de hamster que vous préférez ?</label>
-                <input type="text" id="question1" name="question1" placeholder="Ex : Hamster doré, hamster nain">
-            </div>
+  <div class="quiz-container">
+    <h1>7berpunk x Xham7er : le quizz</h1>
+    <div class="question">
+      <p id="question-text">Question 1: What is the capital of United Kingdom?</p>
+      <div class="choices">
+        <button class="choice" onclick="checkAnswer(0)">London</button>
+        <button class="choice" onclick="checkAnswer(1)">Paris</button>
+        <button class="choice" onclick="checkAnswer(2)">Nairobi</button>
+      </div>
+      <p id="feedback"></p>
+    </div>
 
-            <div class="question">
-                <label>2. Possédez-vous un hamster actuellement ?</label>
-                <input type="radio" id="hamsterYes" name="question2" value="oui">
-                <label for="hamsterYes">Oui</label>
-                <input type="radio" id="hamsterNo" name="question2" value="non">
-                <label for="hamsterNo">Non</label>
-            </div>
-
-            <div class="question">
-                <label for="question3">3. Quelle est la durée de vie moyenne d'un hamster ?</label>
-                <select id="question3" name="question3">
-                    <option value="">Sélectionnez une réponse</option>
-                    <option value="1-2 ans">1-2 ans</option>
-                    <option value="2-3 ans">2-3 ans</option>
-                    <option value="4-5 ans">4-5 ans</option>
-                </select>
-            </div>
-
-            <div class="question">
-                <label>4. Quels sont les aliments que les hamsters peuvent consommer ? (plusieurs réponses possibles)</label>
-                <input type="checkbox" id="graines" name="question4" value="Graines">
-                <label for="graines">Graines</label>
-                <input type="checkbox" id="fruits" name="question4" value="Fruits">
-                <label for="fruits">Fruits</label>
-                <input type="checkbox" id="chocolat" name="question4" value="Chocolat">
-                <label for="chocolat">Chocolat</label>
-                <input type="checkbox" id="légumes" name="question4" value="Légumes">
-                <label for="légumes">Légumes</label>
-            </div>
-
-            <!-- Repeat for more questions -->
-            <div class="question">
-                <label for="question5">5. Quelle taille moyenne atteint un hamster ?</label>
-                <input type="text" id="question5" name="question5" placeholder="Ex : 8 à 12 cm">
-            </div>
-
-            <!-- Add more questions here up to 20 -->
-
-            <button type="submit">Soumettre le questionnaire</button>
-        </form>
-    </main>
-    <script>
-        document.getElementById('hamsterForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            alert('Merci d\'avoir rempli le questionnaire !');
-        });
-    </script>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
