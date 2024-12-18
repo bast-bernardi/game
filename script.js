@@ -1,33 +1,60 @@
-const dino = document.getElementById("dino");
-const cactus = document.getElementById("cactus");
 
-function jump() {
-  if (dino.classList != "jump") {
-    dino.classList.add("jump");
 
-    setTimeout(function () {
-      dino.classList.remove("jump");
-    }, 500);
-  }
+const questions = [
+  {
+    question: "What is the capital of United Kingdom?",
+    choices: ["London", "Paris", "Nairobi"],
+    correct: 0
+  },
+  {
+    question: "How many days are there in a week?",
+    choices: ["Five", "Three", "Seven"],
+    correct: 2
+  },
+  {
+    question: "What is the closest planet to the sun?",
+    choices: ["Earth", "Mercury", "Saturn"],
+    correct: 1
+  },
+  // Add more questions here...
+];
+
+let currentQuestion = 0;
+let correctAnswers = 0;
+
+function showQuestion() {
+  const questionText = document.getElementById("question-text");
+  questionText.textContent = questions[currentQuestion].question;
+
+  const choices = document.querySelectorAll(".choice");
+  choices.forEach((choice, index) => {
+    choice.textContent = questions[currentQuestion].choices[index];
+  });
+
+  const feedback = document.getElementById("feedback");
+  feedback.textContent = "";
 }
 
-let isAlive = setInterval(function () {
-
-  let dinoY = parseInt(window.getComputedStyle(dino).getPropertyValue("top"));
-
-
-  let cactusX = parseInt(
-    window.getComputedStyle(cactus).getPropertyValue("left")
-  );
-
- 
-  if (cactusX < 50 && cactusX > 0 && dinoY >= 140) {
-
-    alert("Game Over!");
+function checkAnswer(selected) {
+  const feedback = document.getElementById("feedback");
+  if (selected === questions[currentQuestion].correct) {
+    feedback.textContent = "Correct!";
+    correctAnswers++;
+  } else {
+    feedback.textContent = "Incorrect!";
   }
-}, 10);
 
+  setTimeout(() => {
+    currentQuestion++;
 
-document.addEventListener("keydown", function (event) {
-  jump();
-});
+    if (currentQuestion < questions.length) {
+      showQuestion();
+    } else {
+      const quizContainer = document.querySelector(".quiz-container");
+      quizContainer.innerHTML = `<p>You got ${correctAnswers} out of ${questions.length} questions.</p>`;
+    }
+  }, 2000);
+}
+
+showQuestion();
+
