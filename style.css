@@ -1,62 +1,39 @@
-.dino-game {
-  width: 600px;
-  height: 200px;
-  border: 1px solid;
-  margin: auto;
-}
 
-#dino {
-  width: 50px;
-  height: 50px;
-  background-image: url("img/trex.png");  background-size: 50px 50px;
-  position:relative;
-  top:140px;
-}
 
-#cactus {
-  width: 20px;
-  height: 40px;
-  position: relative;
-  top: 110px;
-  left: 580px;
-
-  background-image: url("img/cactus.png");
-  background-size: 20px 40px;
-
-  animation: block 1s infinite linear;
-}
-
-@keyframes block {
-  0% {
-    left: 580px;
+body {
+    background-color: #d5d5d5;
+  }
+  
+  .quiz-container {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2em;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
-  100% {
-    left: -20px;
+  .choices {
+    display: flex;
   }
-}
-
-.jump {
-  animation: jump 0.5s linear;
-}
-
-@keyframes jump {
-  0% {
-    top: 150px;
+  
+  .choice {
+    font-size: 1em;
+    display: block;
+    margin: 5px 5px;
+    padding: .5em .75em;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
   }
-
-  30% {
-    top: 130px;
+  
+  .choice:hover {
+    background-color: #2980b9;
   }
+  
 
-  50% {
-    top: 80px;
-  }
 
-  80% {
-    top: 130px;
-  }
-
-  100% {
-    top: 150px;
-  }
