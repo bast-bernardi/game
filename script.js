@@ -81,18 +81,21 @@ const render = () => {
     })
   }
   // draw bird
-  if (gamePlaying) {
-    ctx.drawImage(img, 432, Math.floor((index % 9) / 3) * size[1], ...size, cTenth, flyHeight, ...size);
+if (gamePlaying) {
+    // Dessiner l'image fixe de l'oiseau pendant le jeu
+    ctx.drawImage(birdImage, cTenth, flyHeight, size[0], size[1]);
     flight += gravity;
     flyHeight = Math.min(flyHeight + flight, canvas.height - size[1]);
-  } else {
-    ctx.drawImage(img, 432, Math.floor((index % 9) / 3) * size[1], ...size, ((canvas.width / 2) - size[0] / 2), flyHeight, ...size);
+} else {
+    // Dessiner l'image fixe de l'oiseau dans l'écran d'accueil
+    ctx.drawImage(birdImage, (canvas.width / 2) - (size[0] / 2), flyHeight, size[0], size[1]);
     flyHeight = (canvas.height / 2) - (size[1] / 2);
-      // text accueil
+
+    // Texte d'accueil
     ctx.fillText(`Best score : ${bestScore}`, 85, 245);
     ctx.fillText('Click to play', 90, 535);
     ctx.font = "bold 30px courier";
-  }
+}
 
   document.getElementById('bestScore').innerHTML = `Best : ${bestScore}`;
   document.getElementById('currentScore').innerHTML = `Current : ${currentScore}`;
