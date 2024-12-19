@@ -1,23 +1,9 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <title>questionnaire sur les hamsters</title>
-    <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="quiz-container">
-    <h1>7berpunk x Xham7er : le quizz</h1>
-    <div class="question">
-      <p id="question-text">Question 1: What is the capital of United Kingdom?</p>
-      <div class="choices">
-        <button class="choice" onclick="checkAnswer(0)">London</button>
-        <button class="choice" onclick="checkAnswer(1)">Paris</button>
-        <button class="choice" onclick="checkAnswer(2)">Nairobi</button>
-      </div>
-      <p id="feedback"></p>
+  <header>
+    <h1>Floppy Bird</h1>
+    <div class="score-container">
+      <div id="bestScore"></div>
+      <div id="currentScore"></div>
     </div>
+  </header>
 
-  </div>
-  <script src="script.js"></script>
-</body>
-</html>
+  <canvas id="canvas" width="431" height="768"></canvas>
