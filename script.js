@@ -3,7 +3,7 @@ const ctx = canvas.getContext('2d');
 const img = new Image();
 img.src = "https://i.ibb.co/Q9yv5Jk/flappy-bird-set.png";
 const birdImage = new Image();
-birdImage.src = "HamsterFusee.png";
+birdImage.src = "hamsterFusee.png";
 
 // general settings
 let gamePlaying = false;
