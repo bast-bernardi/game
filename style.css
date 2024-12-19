@@ -24,7 +24,7 @@ h1 {
 
 canvas {
   width: 100%; /* Largeur = 100% de la fenêtre */
-  height: 100dvh; /* Hauteur = 100% de la fenêtre */
+  height: 100lvh; /* Hauteur = 100% de la fenêtre */
   display: block; /* Retirer les marges blanches par défaut */
 }
 
