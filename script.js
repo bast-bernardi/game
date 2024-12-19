@@ -128,12 +128,3 @@ function resizeCanvas() {
 }
 window.addEventListener('resize', resizeCanvas);
 resizeCanvas(); // Appeler au chargement initial
-
-function adjustCanvasSize() {
-  const canvas = document.getElementById('canvas');
-  canvas.width = window.innerWidth; // Largeur de la fenêtre visible
-  canvas.height = window.innerHeight; // Hauteur de la fenêtre visible
-}
-window.addEventListener('resize', adjustCanvasSize);
-adjustCanvasSize(); // Ajustement initial
-
