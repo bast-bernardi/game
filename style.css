@@ -8,9 +8,7 @@ body {
 }
 header {
   margin: 0 auto;
-  width: 100%; /* S'adapte à la largeur de l'écran */
-  max-width: 431px; /* Limite la largeur maximale pour conserver le design */
-  box-sizing: border-box; /* Inclut les bordures/marges dans le calcul de la largeur */
+  width: 431px;
 }
 h1 {
   background: url("https://i.ibb.co/Q9yv5Jk/flappy-bird-set.png") 0% 340px;
@@ -25,8 +23,8 @@ h1 {
 }
 
 canvas {
-  width: 100vw; /* Largeur = 100% de la fenêtre */
-  height: 100vh; /* Hauteur = 100% de la fenêtre */
+  width: 100%; /* Largeur = 100% de la fenêtre */
+  height: 100%; /* Hauteur = 100% de la fenêtre */
   display: block; /* Retirer les marges blanches par défaut */
 }
 
@@ -35,10 +33,17 @@ html, body {
   padding: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden; /* Empêche le défilement */
+  /*overflow: hidden; /* Empêche le défilement */
 }
 canvas {
   display: block; /* Retirer les marges par défaut du canvas */
   margin: 0;
   padding: 0;
+}
+
+header {
+  margin: 0 auto;
+  width: 100%; /* S'adapte à la largeur de l'écran */
+  max-width: 431px; /* Limite la largeur maximale pour conserver le design */
+  box-sizing: border-box; /* Inclut les bordures/marges dans le calcul de la largeur */
 }
