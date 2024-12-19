@@ -106,3 +106,21 @@ img.onload = render;
 // start game
 document.addEventListener('click', () => gamePlaying = true);
 window.onclick = () => flight = jump;
+
+function resizeCanvas() {
+  const canvas = document.getElementById('canvas');
+  const ratio = 431 / 768; // Ratio largeur/hauteur du jeu
+  canvas.width = window.innerWidth; // Adapter à la largeur de l'écran
+  canvas.height = window.innerWidth / ratio; // Calculer la hauteur pour respecter le ratio
+
+  // Si l'écran est trop haut, ajustez en fonction de la hauteur
+  if (canvas.height > window.innerHeight) {
+    canvas.height = window.innerHeight;
+    canvas.width = canvas.height * ratio;
+  }
+
+  // Redessinez ou repositionnez les éléments ici si nécessaire
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas(); // Appeler au chargement initial
+
