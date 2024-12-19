@@ -1,9 +1,9 @@
-const birdImage = new Image();
-birdImage.src = "hamsterFusee.png";
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 const img = new Image();
 img.src = "https://i.ibb.co/Q9yv5Jk/flappy-bird-set.png";
+const birdImage = new Image();
+birdImage.src = "HamsterFusee.png";
 
 // general settings
 let gamePlaying = false;
@@ -81,21 +81,18 @@ const render = () => {
     })
   }
   // draw bird
-if (gamePlaying) {
-    // Dessiner l'image fixe de l'oiseau pendant le jeu
-    ctx.drawImage(birdImage, cTenth, flyHeight, size[0], size[1]);
+  if (gamePlaying) {
+    ctx.drawImage(birdImage, cTenth, flyHeight, size[0], size[1]);;
     flight += gravity;
     flyHeight = Math.min(flyHeight + flight, canvas.height - size[1]);
-} else {
-    // Dessiner l'image fixe de l'oiseau dans l'écran d'accueil
+  } else {
     ctx.drawImage(birdImage, (canvas.width / 2) - (size[0] / 2), flyHeight, size[0], size[1]);
     flyHeight = (canvas.height / 2) - (size[1] / 2);
-
-    // Texte d'accueil
+      // text accueil
     ctx.fillText(`Best score : ${bestScore}`, 85, 245);
     ctx.fillText('Click to play', 90, 535);
     ctx.font = "bold 30px courier";
-}
+  }
 
   document.getElementById('bestScore').innerHTML = `Best : ${bestScore}`;
   document.getElementById('currentScore').innerHTML = `Current : ${currentScore}`;
@@ -112,6 +109,31 @@ img.onload = render;
 document.addEventListener('click', () => gamePlaying = true);
 window.onclick = () => flight = jump;
 
+function resizeCanvas() {
+  const canvas = document.getElementById('canvas');
+  const ratio = 431 / 768; // Ratio largeur/hauteur du jeu
+  canvas.width = window.innerWidth; // Adapter à la largeur de l'écran
+  canvas.height = window.innerWidth / ratio; // Calculer la hauteur pour respecter le ratio
+
+  // Si l'écran est trop haut, ajustez en fonction de la hauteur
+  if (canvas.height > window.innerHeight) {
+    canvas.height = window.innerHeight;
+    canvas.width = canvas.height * ratio;
+  }
+
+  // Redessinez ou repositionnez les éléments ici si nécessaire
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas(); // Appeler au chargement initial
+
+function toggleFullScreen() {
+  const canvas = document.getElementById('canvas');
+  if (!document.fullscreenElement) {
+    canvas.requestFullscreen();
+  } else {
+    document.exitFullscreen();
+  }
+}
 function resizeCanvas() {
   const canvas = document.getElementById('canvas');
   const ratio = 431 / 768; // Ratio largeur/hauteur du jeu
