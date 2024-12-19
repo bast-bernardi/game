@@ -8,7 +8,9 @@ body {
 }
 header {
   margin: 0 auto;
-  width: 431px;
+  width: 100%; /* S'adapte à la largeur de l'écran */
+  max-width: 431px; /* Limite la largeur maximale pour conserver le design */
+  box-sizing: border-box; /* Inclut les bordures/marges dans le calcul de la largeur */
 }
 h1 {
   background: url("https://i.ibb.co/Q9yv5Jk/flappy-bird-set.png") 0% 340px;
