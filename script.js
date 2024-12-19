@@ -1,5 +1,5 @@
 const birdImage = new Image();
-birdImage.src = "https://path-to-your-bird-image.png";
+birdImage.src = "hamsterFusee.png";
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 const img = new Image();
