@@ -21,3 +21,9 @@ h1 {
   padding: 8px 6px;
   background: #5EE270;
 }
+
+canvas {
+  width: 100vw; /* Largeur = 100% de la fenêtre */
+  height: 100vh; /* Hauteur = 100% de la fenêtre */
+  display: block; /* Retirer les marges blanches par défaut */
+}
